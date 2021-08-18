@@ -408,12 +408,14 @@ textarea {
 .check {
   position: relative;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: start;
+  padding-left: 54px;
   margin-bottom: 30px;
 }
 
 .check-label {
-  padding-left: 22px;
+  padding-left: 7px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -421,20 +423,27 @@ textarea {
 }
 
 .check-box {
-  position: absolute;
-    left: 52px;
-    bottom: 5px;
-    width: 16px;
-    height: 15px;
-    border: 2px solid var(--primary-color);
-    border-radius: 3px;
-    background-color: var(--primary-white-color);
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 3px;
+  background-color: var(--primary-white-color);
 }
 
-.check-input:checked + .check-box {
-  background-image: url(../images/icon-check.svg);
+.check-icon {
+  fill: var(--accent-color);
+  position: absolute;
+  top: 4px;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  
+  opacity: 0;
+}
+
+.check-input:checked + .check-box .check-icon {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
+  opacity: 1;
 }
 
 .check-link {
@@ -447,17 +456,13 @@ textarea {
 }
 
 .check-input {
+  
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   border: 0;
   padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
 .form-button-modal {
