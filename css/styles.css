@@ -293,6 +293,7 @@ span.logo-link {
 }
 
 .button-modal {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -319,7 +320,6 @@ span.logo-link {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 39px 40px 41px;
 }
 
 .form-item {
@@ -338,7 +338,12 @@ span.logo-link {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
+  padding-left: 41px;
+  padding-right: 39px;
+}
+
+.form-modal .form-field + .form-field {
+  margin-top: 10px;
 }
 
 .form-label {
@@ -356,9 +361,10 @@ span.logo-link {
   width: 100%;
   height: 120px;
   padding: 12px 16px;
+  margin-bottom: 20px;
 }
 
-.form-field::placeholder {
+.form-field textarea::placeholder {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
@@ -389,8 +395,8 @@ span.logo-link {
 
 .modal-form-icon {
   position: absolute;
-  bottom: 12px;
-  left: 11px;
+  bottom: 11px;
+  left: 52px;
   fill: var(--primary-color);
   
 }
@@ -401,11 +407,13 @@ textarea {
 
 .check {
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .check-label {
-  /* position: absolute; */
+  padding-left: 22px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
@@ -414,9 +422,19 @@ textarea {
 
 .check-box {
   position: absolute;
-  background-image: url(../images/icon\ not\ checked.svg);
-  width: 16px;
-  height: 15px;
+    left: 52px;
+    bottom: 5px;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 3px;
+    background-color: var(--primary-white-color);
+}
+
+.check-input:checked + .check-box {
+  background-image: url(../images/icon-check.svg);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 .check-link {
@@ -442,7 +460,27 @@ textarea {
   overflow: hidden;
 }
 
-.checkbox {
+.form-button-modal {
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  min-width: 200px;
+  padding: 10px 55px 10px 56px;
+  
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.form-button-modal:hover,
+.form-button-modal:focus {
+  background-color: #188CE8;
 }
 
 /* Button */
